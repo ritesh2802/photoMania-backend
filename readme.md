@@ -1,1 +1,1 @@
-this is bakcend project
+this is server for photoMania app
