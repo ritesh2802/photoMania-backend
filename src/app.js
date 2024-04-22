@@ -16,9 +16,7 @@ app.use(cookieParser());
 
 // import routes
 
-app.get("/",
-    res.json( new ApiResponse(200,"hello","server"))
-)
+
 import userRouter from "./routes/user.routes.js";
 app.use("/api/v1/users",userRouter)
 
