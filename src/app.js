@@ -16,11 +16,14 @@ app.use(cookieParser());
 
 // import routes
 
-
+app.get("/",
+    res.json( new ApiResponse(200,"hello","server"))
+)
 import userRouter from "./routes/user.routes.js";
 app.use("/api/v1/users",userRouter)
 
 import photoRouter from "./routes/photo.routes.js";
+import { ApiResponse } from "./utils/ApiResponse.js";
 app.use("/api/v1/photos",photoRouter)
 // http://localhost:8000/api/v1/users/register
 // http://localhost:8000/api/v1/photos/upload
