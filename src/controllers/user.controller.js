@@ -4,6 +4,10 @@ import {User }from "../models/user.model.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv"
+dotenv.config({
+    path: './.env'
+})
 
 // generate access and refresh token 
 const generateAccessAndRefreshTokens=async(userId)=>{
@@ -123,7 +127,7 @@ const loginUser = asyncHandler(async(req,res)=>{
     console.log(req.body)
     const {email,username,password} =  req.body;
 
-    console.log("email => ",!email)
+    console.log("email => ",email)
     if(!email && !username){
         throw new ApiError(400,"enter username or email ")
 

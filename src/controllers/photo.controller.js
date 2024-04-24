@@ -28,7 +28,7 @@ const uploadPhoto=asyncHandler(async(req,res)=>{
         owner:req.user._conditions._id
     })
 
-    return res.status(200, myPhoto,"photo uploaded successfully")
+    return res.status(200).json(new ApiResponse( 200,myPhoto,"photo uploaded successfully"))
 
 })
 
