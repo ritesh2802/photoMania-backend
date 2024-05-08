@@ -11,7 +11,7 @@ dotenv.config({
 const app = express();
 
 app.use(cors({
-    origin:"http://localhost:3000/",
+    origin:process.env.CORS_ORIGIN,
     credetials:true,
     methods:["GET","POST","PATCH","DELETE"]
 }))
